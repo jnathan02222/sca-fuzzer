@@ -54,9 +54,7 @@ class EquivalenceAnalyserCommon(Analyser):
                 continue
             equivalent_inputs_ids[ctrace].append(i)
 
-        for ctrace, ids in equivalent_inputs_ids.items():
-            print(ctrace)
-            
+
         #   2. Build equivalence classes
         effective_classes: List[EquivalenceClass] = []
         for ctrace, ids in equivalent_inputs_ids.items():
@@ -76,6 +74,8 @@ class EquivalenceAnalyserCommon(Analyser):
 
         #   3. Sort the equivalence classes by ctrace
         effective_classes.sort(key=lambda x: x.ctrace)
+        
+        print(len(effective_classes))
 
         # Check if any of the equivalence classes is a contract counterexample
         violations: List[Violation] = []
