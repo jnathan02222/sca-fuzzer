@@ -54,7 +54,7 @@ class EquivalenceAnalyserCommon(Analyser):
                 continue
             equivalent_inputs_ids[ctrace].append(i)
 
-        print(len(equivalent_inputs_ids))
+        print(equivalent_inputs_ids)
         
         #   2. Build equivalence classes
         effective_classes: List[EquivalenceClass] = []
