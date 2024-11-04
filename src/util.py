@@ -366,7 +366,6 @@ class Logger:
         print("Contract trace:")
         if CONF.contract_observation_clause != 'l1d':
             print(f" {violation.ctrace} (hash)")
-            print(f" {violation.ctrace.raw} (raw)")
         else:
             # special case: L1D trace
             value = violation.ctrace.hash_
@@ -386,8 +385,6 @@ class Logger:
             print(f"  Input group 1: {inputs1}")
             print(f"  Input group 2: {inputs2}")
             print(f"{pretty_htrace_pair(htrace1, htrace2, offset='  ')}")
-            print(f"{htrace1.raw} (htrace1 raw)")
-            print(f"{htrace2.raw} (htrace2 raw)")
         else:
             for measurements in violation.htrace_groups:
                 inputs = [m.input_id for m in measurements]
