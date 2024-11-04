@@ -218,12 +218,6 @@ class FuzzerGeneric(Fuzzer):
         args.inputs, args.ctraces = self._boost_inputs(inputs, start_nesting)
         violations, args.ctraces, htraces = self._collect_traces(args)
 
-        for c in args.ctraces:
-            print(c)
-            
-        for h in htraces:
-            print(pretty_htrace(h))
-
         if not violations:
             STAT.fast_path += 1
             return None
